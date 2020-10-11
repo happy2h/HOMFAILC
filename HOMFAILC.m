@@ -27,9 +27,9 @@ for k = 1:1:i_n
 		if k == 1
 			phi(k,t) = 7.5;
 		elseif k == 2
-			phi(k,t) = phi(k-1,t) + (lambda*(u(k-1,t) - 0)/(mu + norm(u(k-1,t) - 0)))*(y(k-1,t+1) - 0 - phi(k-1,t)*(u(k-1,t) - 0));
+			phi(k,t) = phi(k-1,t) + (eta*(u(k-1,t) - 0)/(mu + norm(u(k-1,t) - 0)))*(y(k-1,t+1) - 0 - phi(k-1,t)*(u(k-1,t) - 0));
 		elseif k == 3
-			phi(k,t) = phi(k-1,t) + (lambda*(u(k-1,t) - 0)/(mu + norm(u(k-1,t) - 0)))*(y(k-1,t+1) - 0 - phi(k-1,t)*(u(k-1,t) - 0));
+			phi(k,t) = phi(k-1,t) + (eta*(u(k-1,t) - 0)/(mu + norm(u(k-1,t) - 0)))*(y(k-1,t+1) - 0 - phi(k-1,t)*(u(k-1,t) - 0));
 		else 
 			phi(k,t) = (u(k-1,t) - u(k-2,t))*(y(k-1,t+1) - y(k-2,t+1))/(mu + norm(u(k-1,t) - u(k-2,t))) + (mu*eta/(mu + norm(u(k-1,t) - u(k-2,t))))*(alpha_1*phi(k-1,t) + alpha_2*phi(k-2,t) + alpha_3*phi(k-3,t));
         end
